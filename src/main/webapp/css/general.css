@@ -1,0 +1,517 @@
+/* Importación del resto de archivos CSS
+ ========================================================================== */
+@import 'reset.css';
+
+@import 'texto.css';
+
+@import 'responsivoEscritorio.css';
+
+@import 'responsivoTablet.css';
+
+@import 'responsivoMovil.css';
+
+/* Estilos generales para toda la web
+ ========================================================================== */
+.contenedor {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.contenedor::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.noPadding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.alinearCentro {
+	text-align: center;
+}
+
+.alinearIzquierda {
+	text-align: left;
+}
+
+.alinearDerecha {
+	text-align: right;
+}
+
+.posicionarIzquierda {
+	float: left;
+}
+
+.posicionarDerecha {
+	float: right;
+}
+
+.reescalarImagen img {
+	max-width: 100%;
+}
+
+.noLineHeight {
+	line-height: 0;
+}
+
+.noDisplay {
+	display: none;
+}
+
+.columnas {
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	-o-column-count: 2;
+	column-gap: 2em;
+	-webkit-column-gap: 2em;
+	-moz-column-gap: 2em;
+	-o-column-gap: 2em;
+}
+
+/* Estilos del Slider
+ ========================================================================== */
+#slider {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	border: solid 2px gray;
+	width: 83% !important;
+	margin-left: 9%;
+	background-color: rgba(255, 255, 255, 0.3);
+	margin-bottom: -10%;
+}
+
+#slider ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 200px;
+	list-style: none;
+	width: 1000px;
+}
+
+#slider ul li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 982px;
+	height: 500px;
+	background-color: rgba(255, 255, 255, 0.3);
+	text-align: center;
+	line-height: 30px;
+	overflow: auto;
+}
+
+a.control_prev, a.control_next {
+	position: absolute;
+	top: 40%;
+	z-index: 999;
+	display: block;
+	padding: 4% 3%;
+	width: auto;
+	height: auto;
+	background: #2a2a2a;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 18px;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+	opacity: 1;
+	-webkit-transition: all 0.2s ease;
+}
+
+a.control_prev {
+	border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+	right: 0;
+	border-radius: 2px 0 0 2px;
+}
+
+/* Otros estilos
+ ========================================================================== */
+.busqueda {
+	border-radius: 20px;
+	width: 90%;
+	padding: 0.7%;
+	border: solid 2px gray;
+	font-size: 20px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.enviar {
+	font-size: 17px;
+	cursor: pointer;
+	background-color: #FFE3EC;
+	color: #FF6D99;
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #FF6D99;
+	border-image: initial;
+	padding: 0.5% 1.5%;
+}
+
+.enviar:hover {
+	border: solid 2px #FFE3EC;
+	color: #FFE3EC;
+	background-color: #FF6D99;
+}
+
+.lista {
+	border-radius: 10px;
+	border: solid 3px #FFC471;
+	padding: 2%;
+	min-width: 100%;
+}
+
+.scroll {
+	max-height: 500px;
+	overflow: auto;
+}
+
+.scroll img {
+	border: solid 2px;
+}
+
+.tituloEnviar:hover {
+	color: #54D9DB;
+}
+
+.logoIndex {
+	margin-top: 5%;
+	width: 50%;
+}
+
+.logoLista {
+	width: 40%;
+}
+
+.logoError {
+	margin-top: 100px;
+}
+
+.textoError {
+	font-size: 45px;
+}
+
+.titulo {
+	font-size: 30px;
+}
+
+#formNuevaBusqueda {
+	margin-top: 15px;
+	color: white;
+}
+
+#formNuevaBusqueda input {
+	width: 80%;
+	border-radius: 5px;
+	border: solid 2px white;
+	padding: 1% 1%;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.MAL, .ANN {
+	padding: 3%;
+}
+
+.Tumblr img, .Youtube iframe, .Aliexpress img {
+	border: solid 2px pink;
+	border-radius: 5px;
+	margin: 1%;
+	width: 30%;
+	-webkit-transition: all .3s ease; /* Safari y Chrome */
+	-moz-transition: all .3s ease; /* Firefox */
+	-o-transition: all .3s ease; /* IE 9 */
+	-ms-transition: all .3s ease; /* Opera */
+}
+
+.MAL {
+	margin: 0 auto;
+	width: 70%;
+	color: red;
+}
+
+.Tumblr img:hover {
+	-webkit-transform: scale(1.25);
+	-moz-transform: scale(1.25);
+	-ms-transform: scale(1.25);
+	-o-transform: scale(1.25);
+	transform: scale(1.25);
+}
+
+.score, .status, .episodes {
+	padding: 0.3% 0.7%;
+	font-size: 15px;
+	border-radius: 10px;
+	border: solid 2px pink;
+	margin-left: 5px;
+}
+
+legend {
+	font-weight: bold;
+	font-size: 17px;
+	text-align: left;
+}
+
+.logear {
+	margin-left: 50px;
+	color: white;
+}
+
+.logear button {
+	cursor: pointer;
+	padding-left: 0.7%;
+	padding-right: 0.7%;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	background-color: #FCFFC6;
+	border: 1px solid orange;
+	border-radius: 5px;
+	color: orange
+}
+
+#loginForm {
+	border: 1px solid #CED5D7;
+	border-radius: 6px;
+	padding: 45px 45px 20px;
+	box-shadow: 0px 5px 10px #B5C1C5, 0 0 0 10px #EEF5F7 inset;
+}
+
+#loginForm label {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#loginForm input[type='text'], input[type='password'] {
+	padding: 0.3%;
+	text-align: center;
+	font-size: 18px;
+	color: #22a1c5;
+	border: 1px solid #CED5D7;
+	border-radius: 10px;
+	box-shadow: 0 0 0 3px #EEF5F7;
+	margin: 16px 0;
+}
+
+#loginForm input[type='text']:focus, input[type='password']:focus {
+	box-shadow: 0 0 0 3px #dde9ec;
+}
+
+#loginForm input[type='submit'] {
+	border: 1px solid #CED5D7;
+	box-shadow: 0 0 0 3px #EEF5F7;
+	padding: 1% 2%;
+	border-radius: 20px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px white;
+	background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
+	background: -webkit-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
+}
+
+#loginForm input[type='submit']:hover {
+	background: -moz-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
+	background: -webkit-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
+	cursor: pointer;
+}
+
+#loginForm input[type='submit']:active {
+	background: -moz-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
+	background: -webkit-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
+}
+
+.lineas {
+	border-top: 1px solid #ffc471;
+	margin-bottom: 17px;
+}
+
+form:last-child .lineas {
+	border-top: none;
+	margin-bottom: 0px;
+}
+
+.nuevaBusqueda {
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+.lineasResultados {
+	border-top: 1px solid gray;
+	margin-bottom: 17px;
+}
+
+.lineasResultados:last-child {
+	border-top: none;
+	margin-bottom: 0px;
+}
+
+.realizadaAccion {
+	padding: 1.3% 1.7%;
+	font-size: 15px;
+	border-radius: 5px;
+	background-color: #DAFFF5;
+	border: 2px solid #4fd15f;
+	color: #4fd15f;
+	font-weight: bold;
+	text-align: center;
+}
+
+.realizadaAccionFail {
+	padding: 1.3% 1.7%;
+	font-size: 15px;
+	border-radius: 5px;
+	background-color: #ff5959;
+	border: 2px solid #410000;
+	color: #410000;
+	font-weight: bold;
+	text-align: center;
+}
+
+.enlace {
+	color: #60a7af;
+	text-decoration: underline;
+	background: none;
+	cursor: pointer;
+}
+
+.sinop {
+	color: #70E5E9;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.tit {
+	color: #DF83F3;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.eps {
+	color: orange;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.tip {
+	color: #FF61B3;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.negro {
+	color: black;
+}
+
+.bodyResult {
+	background-color: white;
+}
+
+.api {
+	font-size: 17px;
+	color: #34D896;
+	font-weight: bold;
+}
+
+.tituloEnviar {
+	font-size: 20px;
+	border: 0px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.add {
+	cursor: pointer;
+	padding: 0.3% 0.7%;
+	font-size: 15px;
+	border-radius: 5px;
+	background-color: #DAFFF5;
+	border: 2px solid #4FD1B7;
+	color: #4FD1B7;
+	font-weight: bold;
+	margin-left: 40px;
+}
+
+.add:hover {
+	background-color: #4FD1B7;
+	border: 2px solid #DAFFF5;
+	color: #DAFFF5;
+}
+
+.update {
+	cursor: pointer;
+	padding: 0.3% 0.7%;
+	font-size: 15px;
+	border-radius: 5px;
+	background-color: #DFB6E8;
+	border: 2px solid #AD5CBF;
+	color: #AD5CBF;
+	font-weight: bold;
+	margin-left: 40px;
+}
+
+.update:hover {
+	background-color: #AD5CBF;
+	border: 2px solid #DFB6E8;
+	color: #DFB6E8;
+}
+
+.delete {
+	cursor: pointer;
+	padding: 0.3% 0.7%;
+	font-size: 15px;
+	border-radius: 5px;
+	background-color: #FDA9A9;
+	border: 2px solid #E91E1E;
+	color: #E91E1E;
+	font-weight: bold;
+	margin-left: 40px;
+}
+
+.delete:hover {
+	background-color: #E91E1E;
+	border: 2px solid #FDA9A9;
+	color: #FDA9A9;
+}
+
+
+video {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: -100;
+	background-size: cover;
+	opacity: 0.3;
+}
+
+.labelsListaAnime {
+	margin-left: 25px;
+}

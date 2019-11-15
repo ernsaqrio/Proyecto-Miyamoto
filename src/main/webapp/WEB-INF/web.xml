@@ -38,7 +38,7 @@
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
 	
-	<!-- SarchController -->
+	<!-- SearchController -->
 	<servlet>
 		<description></description>
 		<display-name>SearchController</display-name>

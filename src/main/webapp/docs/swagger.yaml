@@ -1,0 +1,940 @@
+swagger: "2.0"
+info:
+  description: "An anime api where you can get anime photos, videos, news and merchandising. Also you can update your MyAnimeList account."
+  version: 1.0.0
+  title: "Proyecto-Miyamoto"
+  # put the contact info for your development or API team
+  contact:
+    email: "ernesto.saquete.rios@gmail.com"
+
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+
+# all paths will be relative to the basePath specified
+# basePath: /v1
+# Added by API Auto Mocking Plugin
+# host: proyectomiyamoto.appspot.com/
+# basePath: /api
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /ernsaqrio/Proyecto-Miyamoto/1.0.0
+# tags are used for organizing operations
+tags:
+  - name: "admins"
+    description: "Secured Admin-only calls"
+  - name: "developers"
+    description: "Operations available to regular developers"
+schemes:
+  - "https"
+paths:
+  "/noticias":
+    get:
+      tags:
+      - "Recurso Noticia"
+      summary: "Método que devuelve todas las noticias"
+      operationId: "getAllNoticias"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Listado de todas las noticias"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Noticia"
+        404:
+          description: "Ningún resultado"
+          
+  "/noticias/idAnime":
+    get:
+      tags:
+      - "Recurso Noticia"
+      summary: "Método que devuelve todas las noticias de la id de un determinado anime"
+      operationId: "getAllNoticiasById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "id"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todas las noticias de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Noticia"
+        404:
+          description: "Ningún resultado"
+          
+  "/noticias/titleAnime":
+    get:
+      tags:
+      - "Recurso Noticia"
+      summary: "Método que devuelve todas las noticias del nombre de un determinado anime"
+      operationId: "getAllNoticiasByTitle"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "title"
+          description: "Título del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todas las noticias de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Noticia"
+        404:
+          description: "Ningún resultado"
+          
+  "/noticias/{id}":
+    get:
+      tags:
+      - "Recurso Noticia"
+      summary: "Método que devuelve una noticia con un determinado id"
+      operationId: "getNoticiaById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "id"
+          description: "ID de la noticia"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Noticia según un determinado id"
+          schema:
+            $ref: "#/definitions/Noticia"
+        404:
+          description: "Ningún resultado"
+  "/imagenes":
+    get:
+      tags:
+      - "Recurso Imagen"
+      summary: "Método que devuelve todas las imágenes"
+      operationId: "getAllImagenes"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Listado de todas las imágenes"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Imagen"
+        404:
+          description: "Ningún resultado"
+          
+  "/imagenes/idAnime":
+    get:
+      tags:
+      - "Recurso Imagen"
+      summary: "Método que devuelve todas las imágenes de la id de un determinado anime"
+      operationId: "getAllImagenesById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "id"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todas las imágenes de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Imagen"
+        404:
+          description: "Ningún resultado"
+          
+  "/imagenes/titleAnime":
+    get:
+      tags:
+      - "Recurso Imagen"
+      summary: "Método que devuelve todas las imagenes del nombre de un determinado anime"
+      operationId: "getAllImagenesByTitle"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "title"
+          description: "Título del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todas las imágenes de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Imagen"
+        404:
+          description: "Ningún resultado"
+          
+  "/imagenes/{id}":
+    get:
+      tags:
+      - "Recurso Imagen"
+      summary: "Método que devuelve una noticia con un determinado id"
+      operationId: "getImagenById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "id"
+          description: "ID de la imagen"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Imagen según un determinado id"
+          schema:
+            $ref: "#/definitions/Imagen"
+        404:
+          description: "Ningún resultado"
+          
+  "/videos":
+    get:
+      tags:
+      - "Recurso Video"
+      summary: "Método que devuelve todos los vídeos"
+      operationId: "getAllVideos"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Listado de todos los vídeos"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Video"
+        404:
+          description: "Ningún resultado"
+          
+  "/videos/idAnime":
+    get:
+      tags:
+      - "Recurso Video"
+      summary: "Método que devuelve todos los vídeos de la id de un determinado anime"
+      operationId: "getAllVideosById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "id"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todos los vídeos de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Video"
+        404:
+          description: "Ningún resultado"
+          
+  "/videos/titleAnime":
+    get:
+      tags:
+      - "Recurso Video"
+      summary: "Método que devuelve todos los vídeos del nombre de un determinado anime"
+      operationId: "getAllVideosByTitle"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "title"
+          description: "Título del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todos los vídeos de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Video"
+        404:
+          description: "Ningún resultado"
+          
+  "/videos/{id}":
+    get:
+      tags:
+      - "Recurso Video"
+      summary: "Método que devuelve un vídeo con un determinado id"
+      operationId: "getVideoById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "id"
+          description: "ID del vídeo"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Vídeo según un determinado id"
+          schema:
+            $ref: "#/definitions/Video"
+        404:
+          description: "Ningún resultado"
+          
+  "/productos":
+    get:
+      tags:
+      - "Recurso Producto"
+      summary: "Método que devuelve todos los productos"
+      operationId: "getAllProductos"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Listado de todos los productos"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Producto"
+        404:
+          description: "Ningún resultado"
+          
+  "/productos/idAnime":
+    get:
+      tags:
+      - "Recurso Producto"
+      summary: "Método que devuelve todos los productos de la id de un determinado anime"
+      operationId: "getAllProductosById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "id"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todos los productos de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Producto"
+        404:
+          description: "Ningún resultado"
+          
+  "/productos/titleAnime":
+    get:
+      tags:
+      - "Recurso Producto"
+      summary: "Método que devuelve todos los productos del nombre de un determinado anime"
+      operationId: "getAllProductosByTitle"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "title"
+          description: "Título del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Listado de todos los productos de un determinado anime"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Producto"
+        404:
+          description: "Ningún resultado"
+          
+  "/productos/{id}":
+    get:
+      tags:
+      - "Recurso Producto"
+      summary: "Método que devuelve un vídeo con un determinado id"
+      operationId: "getProductoById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "id"
+          description: "ID del vídeo"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Vídeo según un determinado id"
+          schema:
+            $ref: "#/definitions/Producto"
+        404:
+          description: "Ningún resultado" 
+          
+          
+  "/animes":
+    get:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que devuelve todos los animes"
+      operationId: "getAllAnimes"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Listado de todos los animes"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Anime"
+        404:
+          description: "Ningún resultado"
+    post:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que añade un anime"
+      operationId: "addAnime"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Anime"
+          description: "Campos del anime"
+          required: true
+          schema:
+            $ref: "#/definitions/Anime"
+      responses:
+        201:
+          description: "Anime añadido correctamente"
+          schema:
+              $ref: "#/definitions/Anime"
+        400:
+          description: "Petición incorrecta"
+    put:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que actualiza un anime"
+      operationId: "updateAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Anime"
+          description: "Campos del anime"
+          required: true
+          schema:
+            $ref: "#/definitions/Anime"
+      responses:
+        204:
+          description: "Anime actualizado correctamente"
+        400:
+          description: "Petición incorrecta"
+        404:
+          description: "Anime no encontrado"
+          
+  "/animes/{id}":
+    get:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que devuelve un anime con un determinado id"
+      operationId: "getAnimeById"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "id"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Anime según un determinado id"
+          schema:
+              $ref: "#/definitions/Anime"
+        404:
+          description: "Ningún resultado"
+    delete:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que elimina un anime"
+      operationId: "removeAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "id"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "Anime eliminado correctamente"
+        404:
+          description: "Anime no encontrado"
+          
+  "/animes/title":
+    get:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que devuelve una lista de animes con un determinado título"
+      operationId: "geAllAnimesByTitle"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "query"
+          name: "title"
+          description: "Título del anime"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Lista de animes según un determinado título"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Anime"
+        404:
+          description: "Ningún resultado"
+          
+  "/animes/noticia/{idAnime}":
+    post:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que añade una noticia a un anime"
+      operationId: "addNoticiaAnime"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Noticia"
+          description: "Campos de la noticia"
+          required: true
+          schema:
+            $ref: "#/definitions/Noticia"
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        201:
+          description: "Noticia añadida correctamente"
+          schema:
+              $ref: "#/definitions/Noticia"
+        400:
+          description: "Petición incorrecta"
+    put:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que actualiza una noticia de un anime"
+      operationId: "updateNoticiaAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Noticia"
+          description: "Campos de la noticia"
+          required: true
+          schema:
+            $ref: "#/definitions/Noticia"
+      responses:
+        204:
+          description: "Noticia actualizada correctamente"
+        400:
+          description: "Petición incorrecta"
+        404:
+          description: "Anime o noticia no encontrado"
+          
+  "/animes/noticia/{idAnime}/{idNoticia}":
+    delete:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que elimina una noticia de un anime"
+      operationId: "deleteNoticiaAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+        - in: "path"
+          name: "idNoticia"
+          description: "ID de la noticia"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "Noticia eliminada correctamente"
+        404:
+          description: "Anime o noticia no encontrado"
+          
+  "/animes/imagen/{idAnime}":
+    post:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que añade una imagen a un anime"
+      operationId: "addImagenAnime"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Imagen"
+          description: "Campos de la imagen"
+          required: true
+          schema:
+            $ref: "#/definitions/Imagen"
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        201:
+          description: "Imagen añadida correctamente"
+          schema:
+              $ref: "#/definitions/Imagen"
+        400:
+          description: "Petición incorrecta"
+    put:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que actualiza una imagen de un anime"
+      operationId: "updateImagenAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Imagen"
+          description: "Campos de la imagen"
+          required: true
+          schema:
+            $ref: "#/definitions/Imagen"
+      responses:
+        204:
+          description: "Imagen actualizada correctamente"
+        400:
+          description: "Petición incorrecta"
+        404:
+          description: "Anime o imagen no encontrado"
+          
+  "/animes/imagen/{idAnime}/{idImagen}":
+    delete:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que elimina una imagen de un anime"
+      operationId: "deleteImagenAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+        - in: "path"
+          name: "idImagen"
+          description: "ID de la imagen"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "Imagen eliminada correctamente"
+        404:
+          description: "Anime o imagen no encontrada"
+          
+  "/animes/video/{idAnime}":
+    post:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que añade un vídeo a un anime"
+      operationId: "addVideoAnime"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Video"
+          description: "Campos del vídeo"
+          required: true
+          schema:
+            $ref: "#/definitions/Video"
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        201:
+          description: "Video añadido correctamente"
+          schema:
+              $ref: "#/definitions/Video"
+        400:
+          description: "Petición incorrecta"
+    put:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que actualiza un vídeo de un anime"
+      operationId: "updateVideoAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Video"
+          description: "Campos del vídeo"
+          required: true
+          schema:
+            $ref: "#/definitions/Video"
+      responses:
+        204:
+          description: "Video actualizado correctamente"
+        400:
+          description: "Petición incorrecta"
+        404:
+          description: "Anime o vídeo no encontrado"
+          
+  "/animes/video/{idAnime}/{idVideo}":
+    delete:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que elimina un vídeo de un anime"
+      operationId: "deleteVideoAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+        - in: "path"
+          name: "idVideo"
+          description: "ID del vídeo"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "Vídeo eliminado correctamente"
+        404:
+          description: "Anime o vídeo no encontrado"
+          
+  "/animes/producto/{idAnime}":
+    post:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que añade un producto a un anime"
+      operationId: "addProductoAnime"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Producto"
+          description: "Campos del producto"
+          required: true
+          schema:
+            $ref: "#/definitions/Producto"
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+      responses:
+        201:
+          description: "Producto añadido correctamente"
+          schema:
+              $ref: "#/definitions/Producto"
+        400:
+          description: "Petición incorrecta"
+    put:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que actualiza un producto de un anime"
+      operationId: "updateProductoAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Producto"
+          description: "Campos del producto"
+          required: true
+          schema:
+            $ref: "#/definitions/Producto"
+      responses:
+        204:
+          description: "Producto actualizado correctamente"
+        400:
+          description: "Petición incorrecta"
+        404:
+          description: "Anime o producto no encontrado"
+          
+  "/animes/producto/{idAnime}/{idProducto}":
+    delete:
+      tags:
+      - "Recurso Anime"
+      summary: "Método que elimina un producto de un anime"
+      operationId: "deleteProductoAnime"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "path"
+          name: "idAnime"
+          description: "ID del anime"
+          required: true
+          type: "string"
+        - in: "path"
+          name: "idProducto"
+          description: "ID del producto"
+          required: true
+          type: "string"
+      responses:
+        204:
+          description: "Producto eliminado correctamente"
+        404:
+          description: "Anime o producto no encontrado" 
+          
+          
+definitions:
+  Anime:
+    required:
+      - id
+      - name
+      - episodes
+      - startDate
+      - endDate
+      - synopsis
+    properties:
+      id:
+        type: string
+        example: a1
+      name:
+        type: string
+        example: Higurashi No Naku Kori ni
+      episodes:
+        type: string
+        example: 26
+      startDate:
+        type: string
+        example: 05/04/2006
+      endDate:
+        type: string
+        example: 27/09/2006
+      synopsis:
+        type: string
+        example: Keiichi Maebara has just moved to the quiet little village of Hinamizawa in the summer of 1983, and quickly becomes inseparable friends with schoolmates Rena Ryuuguu, Mion Sonozaki, Satoko Houjou, and Rika Furude. However, darkness lurks underneath the seemingly idyllic life they lead.
+      imagenes:
+        $ref: '#/definitions/Imagen'
+      noticias:
+        $ref: '#/definitions/Noticia'
+      productos:
+        $ref: '#/definitions/Producto'
+      videos:
+        $ref: '#/definitions/Video'
+  Imagen:
+    required:
+      - id
+      - size
+      - url
+      - title
+    properties:
+      id:
+        type: string
+        example: i1
+      size:
+        type: string
+        example: 1080x920
+      url:
+        type: string
+        example: https://68.media.tumblr.com/c705d57e15bb02a9bbcfe2f49e2267be/tumblr_oq2vo67Zm61t6nfoqo1_1280.jpg
+      title:
+        type: string
+        example: Cosplay higurashi
+  Noticia:
+    required:
+      - id
+      - title
+      - url
+      - content
+    properties:
+      id:
+        type: string
+        example: n1
+      title:
+        type: string
+        example: New promo
+      url:
+        type: string
+        example: http://www.animenewsnetwork.com/news/2011-07-21/higurashi-no-naku-koro-ni-kira-magical-girl-promo-posted
+      content:
+        type: string
+        example: Animate began streaming a "Magical Girl" promotional video for the Higurashi no Naku Koro ni Kira original video anime (OVA) series on Thursday.
+  Producto:
+    required:
+      - id
+      - name
+      - url
+      - prize
+      - description
+    properties:
+      id:
+        type: string
+        example: p1
+      name:
+        type: string
+        example:  Cosplay Rika
+      url:
+        type: string
+        example: https://es.aliexpress.com/item/Higurashi-no-Naku-Koro-ni-Higurashi-When-They-Cry-Rika-Furude-red-Witch-kimono-Cosplay-Costume/32350149865.html?spm=2114.43010208.4.1.P4V9SM
+      prize:
+        type: string
+        example: 57,68 € 
+      description:
+        type: string
+        example: Higurashi no Naku Koro ni Higurashi When They Cry Rika Furude red Witch kimono Cosplay Costume anysize
+  Video:
+    required:
+      - id
+      - title
+      - url
+    properties:
+      id:
+        type: string
+        example: v1
+      title:
+        type: string
+        example:  Higurashi no Naku Koro ni by Eiko Shimamiya
+      url:
+        type: string
+        example: https://www.youtube.com/watch?v=XgWkIrFQQE0
+  
+      imagenes:
+        $ref: '#/definitions/Imagen'
+      noticias:
+        $ref: '#/definitions/Noticia'
+      productos:
+        $ref: '#/definitions/Producto'
+      videos:
+        $ref: '#/definitions/Video'
+      

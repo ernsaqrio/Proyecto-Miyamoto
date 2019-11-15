@@ -1,0 +1,28 @@
+/* AÒade una fuente de texto por defecto
+ ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* AÒade estilos por defecto a las etiquetas de escritura m√°s frecuentes
+ ========================================================================== */
+
+body{
+	font: 14px/1.5 'Raleway', sans-serif;
+}
+
+b, strong {
+	font-weight: bolder;
+}
+
+a {
+	color: #60a7af;
+}
+
+p {
+	font-size: 15px;
+	line-height: 1.2em;
+	color: #666666;
+}
+
+p a {
+	line-height: 2em;
+}
