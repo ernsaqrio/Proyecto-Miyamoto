@@ -29,24 +29,6 @@
 			<a href="#" class="control_next">&gt;</a> <a href="#" class="control_prev">&lt;</a>
 			<ul>
 				<li>
-					<div class="ANN">
-						<c:choose>
-							<c:when test="${not empty param.searchQuery}">
-								<c:forEach begin="0" end="0" items="${requestScope.noticias}" var="noticia">
-									<c:forEach items="${noticia.ann.anime.news}" var="new">
-										<a target="_blank" href="<c:out value="${news.href}"/>"><c:out value="${news.cite}" /></a>
-										<span>(<c:out value="${news.datetime}" />)</span><br /><br />
-										<hr class="lineasResultados">
-									</c:forEach>
-								</c:forEach>
-							</c:when>
-							<c:otherwise>
-								<span>No hay resultados.</span>
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</li>
-				<li>
 					<div class="Tumblr">
 						<c:choose>
 							<c:when test="${not empty param.searchQuery}">
@@ -54,20 +36,6 @@
 									<c:forEach items="${respuesta.photos}" var="foto">
 										<img src="<c:out value="${foto.original_size.url}"/>" />
 									</c:forEach>
-								</c:forEach>
-							</c:when>
-							<c:otherwise>
-								<span>No hay resultados.</span>
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</li>
-				<li>
-					<div class="Youtube">
-						<c:choose>
-							<c:when test="${not empty param.searchQuery}">
-								<c:forEach items="${requestScope.videos.items}" var="item">
-									<iframe src="https://www.youtube.com/embed/<c:out value="${item.id.videoId}"/>"></iframe>
 								</c:forEach>
 							</c:when>
 							<c:otherwise>

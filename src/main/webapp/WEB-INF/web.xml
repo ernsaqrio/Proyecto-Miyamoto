@@ -64,18 +64,6 @@
 		<url-pattern>/AliExpressController</url-pattern>
 	</servlet-mapping>
 	
-	<!-- AnimeNewsController -->
-	<servlet>
-		<description></description>
-		<display-name>AnimeNewsController</display-name>
-		<servlet-name>AnimeNewsController</servlet-name>
-		<servlet-class>aiss.controller.AnimeNewsController</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>AnimeNewsController</servlet-name>
-		<url-pattern>/AnimeNewsController</url-pattern>
-	</servlet-mapping>
 	
 	<!-- TumblrController -->
 	<servlet>
@@ -89,20 +77,6 @@
 		<servlet-name>TumblrController</servlet-name>
 		<url-pattern>/TumblrController</url-pattern>
 	</servlet-mapping>
-	
-	<!-- YouTubeController -->
-	<servlet>
-		<description></description>
-		<display-name>YouTubeController</display-name>
-		<servlet-name>YouTubeController</servlet-name>
-		<servlet-class>aiss.controller.YouTubeController</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>YouTubeController</servlet-name>
-		<url-pattern>/YouTubeController</url-pattern>
-	</servlet-mapping>
-	
 	
 	<!-- Fichero de bienvenida -->
 	<welcome-file-list>
